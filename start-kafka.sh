@@ -39,6 +39,10 @@ do
   fi
 done
 
+#if egrep -q "(^|^#)broker.id=" $KAFKA_HOME/config/server.properties; then
+#    sed -r -i "s@(^|^#)broker.id=(.*)@broker.id=1@g" $KAFKA_HOME/config/server.properties #note that no config values may contain an '@' char
+#fi
+
 if [[ -n "$CUSTOM_INIT_SCRIPT" ]] ; then
   eval $CUSTOM_INIT_SCRIPT
 fi
